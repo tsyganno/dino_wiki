@@ -1,0 +1,23 @@
+{% load static %}
+{% block photo %} {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+            {% block title %}
+            {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css_additional %} {% endblock %}
+</head>
+<body>
+
+
+{% block content %}
+
+{% endblock %}
+{% block photo_1 %} {% endblock %}
+</body>
+</html>

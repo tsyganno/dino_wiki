@@ -1,0 +1,22 @@
+{% extends 'dino_app/basic.html' %}
+
+{% load static %}
+{% block photo %}
+<div style="background-image: url({% static "dino_app/img/dinos.jpg"%}); height: 1000px; width: 1500px;">
+{% endblock %}
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'dino_app/css/all_dinos.css' %}">
+{% endblock %}
+{% block title %}Все динозавры{% endblock %}
+
+{% block content %}
+    {% include 'includes/navigation.html' %}
+    <h1>Список всех динозавров</h1>
+    <ul>
+        {% for dino in dinos %}
+            <li><a href="{{ dino.get_url }}">{{ dino }}</a></li>
+        {% endfor %}
+        <li><a href="https://youtube.com/channel/UCf3W359FeXlodH-KEAAJX3w">YouTube channel
+    Tsyganno</a></li>
+    </ul>
+{% endblock %}

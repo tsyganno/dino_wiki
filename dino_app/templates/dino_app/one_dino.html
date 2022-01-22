@@ -1,0 +1,21 @@
+{% extends 'dino_app/basic.html' %}
+
+{% load static %}
+{% block css_additional %}
+<link rel="stylesheet" href="{% static 'dino_app/css/one_dino.css' %}">
+{% endblock %}
+{% block photo_1 %}
+        <img src ="{% static 'dino_app/img/' %}{{dino.id}}.png" alt="Profile Picture">
+{% endblock %}
+{% block title %} Информация о динозавре - {{dino.name}} {% endblock %}
+
+{% block content %}
+    {% include 'includes/navigation.html' %}
+    <h3>Информация о динозавре - {{dino.name}} </h3>
+    <h2>Принадлежность к пищевой цепи - {{ dino.view }}</h2>
+    <h2>Семейство - {{ dino.family }}</h2>
+    <h2>Семейство - {{ dino.id }}</h2>
+    <h2>Рост - {{ dino.height }} м., длина - {{ dino.length }} м., вес - {{ dino.weight }} кг. </h2>
+    <h2><p style="text-indent: 100px;">{{ dino.description }}</h2>
+{% endblock %}
+
